@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password-Manager</title>
+</head>
+<body>
+    <h1>Password-Manager</h1>
+
+    <h2>Store-Password</h2>
+    <form action="/storepassword" method="post">
+        <label for="website">Enter Website Name:</label>
+        <input type="text" id="website_name" name="website_name" required><br>
+        <label for="username">Enter User Name:</label>
+        <input type="text" id="user_name" name="user_name" required><br>
+        <label for="password">User Password:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="checkbox" id="generate_password" name="generate_password">
+        <label for="generate_password">Generate Strong Password</label><br>
+        <label for="masterpassword">Enter Master Password:</label>
+        <input type="password" id="masterpassword" name="masterpassword" required><br>
+        <input type="submit" value="Store Password">
+    </form>
+
+    <h2>Retrieve-Password</h2>
+    <form action="/retrievepassword" method="post">
+        <label for="website_retrieve">Enter Website Name:</label>
+        <input type="text" id="website_retrieve" name="website_name" required><br>
+        <label for="username_retrieve">Enter User Name:</label>
+        <input type="text" id="username_retrieve" name="user_name" required><br>
+        <label for="master_password_retrieve">Enter Master Password:</label>
+        <input type="password" id="master_password_retrieve" name="masterpassword" required><br>
+        <input type="submit" value="Retrieve Password">
+    </form>
+
+    {% if retrieved_password %}
+        <h2>Retrieved Password:</h2>
+        <p>{{ retrieved_password }}</p>
+    {% endif %}
+</body>
+</html>

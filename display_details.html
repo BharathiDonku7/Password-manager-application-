@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Details</title>
+</head>
+<body>
+    <h1>Password Details</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Website Name</th>
+                <th>User Name</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ website_name }}</td>
+                <td>{{ user_name }}</td>
+                <td>{{ decrypted_password }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/logout">Logout</a>
+</body>
+</html>
